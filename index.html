@@ -1,100 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html ng-app class="no-js" lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Personas, Interview and Benchamark</title>
+  	
+  	<link rel="icon" type="image/png" href="http://www.lunnasoft.com/files/7313/9301/8653/favicon_lunnacuadrado.png"/>
+  	
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Lunnasoft: Tu Plataforma Social de Negocios</title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   	<!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+  	<link rel="stylesheet" href="css/normalize.css">
+  	<link rel="stylesheet" href="css/foundation.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    
+    <script src="js/vendor/modernizr.js"></script>
+    
   </head>
+  
   <body style="background-image: url('http://www.lunnasoft.com/files/4113/9614/7532/fondo_lunna3.jpg');">
-    <div style="text-align: center; margin: 0 auto; margin-top:20px; padding:20px; padding-top:15px;">
-    	<a href="http://www.lunnasoft.com/">
-    		<img src="http://www.lunnasoft.com/themes/LoginTheme/logo_lunna.png">
-		</a>
-    </div>
+  	
+  	<div class="fixed">
+	  	<nav class="top-bar" data-topbar>
+		  <ul class="title-area">
+		    <li class="name">
+		      <h1><a href="http://www.lunnasoft.com/"><img src="http://www.lunnasoft.com/themes/NapssisTheme/images/logo_lunna.png"></a></h1>
+		    </li>
+		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"></a></li>
+		  </ul>
+		
+		  <section class="top-bar-section">
+		    <!-- Right Nav Section -->
+		    <ul class="right">
+		      <li class="active">
+		        <a href="http://www.lunnasoft.com/index.php/register">Regístrate Gratis</a>
+		      </li>
+		      <li>
+		      	<a href="http://www.lunnasoft.com/index.php/login">Iniciar Sesión</a>
+		      </li>
+		    </ul>
+		
+		    <!-- Left Nav Section -->
+		    <ul class="left">
+		      <li>
+		      	<a href="http://www.lunnasoft.com/blog/" target="_blank">Blog</a>
+		      </li>
+		      <li class="has-dropdown">
+		      	<a href="#">Redes Sociales</a>
+		      	<ul class="dropdown">
+		      		<li>
+		      			<a href="http://mx.linkedin.com/company/lunnasoft?trk=ppro_cprof" target="_blank">LinkedIn</a>
+		      		</li>
+		      		<li>
+		      			<a href="https://twitter.com/lunnasoft" target="_blank">Twitter</a>
+		      		</li>
+		      		<li>
+		      			<a href="https://www.facebook.com/lunnasoftmx" target="_blank">Facebook</a>
+		      		</li>
+		      		<li>
+		      			<a href="http://www.youtube.com/channel/UCS8Yzh7DTqMZ9x2r2DaFTaw" target="_blank">YouTube</a>
+		      		</li>
+		      		<li>
+		      			<a href="https://plus.google.com/108763888976224593981/about" target="_blank">Google+</a>
+		      		</li>
+		      	</ul>
+		      </li>
+		      <li>
+		      	<a href="http://www.lunnasoft.com/index.php/privacy" target="_blank">Políticas de Privacidad</a>
+		      </li>
+		    </ul>
+		  </section>
+		</nav>
+  	</div>
+  	
+  	<div style="margin-right: 5%; margin-left: 5%;">
+  	
+	  	<div style="text-align: center; margin: 0 auto; margin-top:20px; padding:20px; padding-top:15px;">
+	    	<a href="http://www.lunnasoft.com/">
+	    		<img src="http://www.lunnasoft.com/themes/LoginTheme/logo_lunna.png">
+			</a>
+	    </div>
+	  	
+	  	<div style="margin-top: 25px; margin-bottom: 25px">
+	  		<a href="#" data-reveal-id="myModal" class="button expand radius">¿Comenzamos?</a>
+	  	</div>
+	  	
+	    <div id="myModal" class="reveal-modal" data-reveal>
+	      <h3>Bienvenido</h3>
+	      <p>Permítenos darte un recorrido más personalizado respondiendo las siguientes preguntas</p>
+	      <label>¿Cómo te llamas?</label>
+	      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+	      <label>¿En dónde trabajas?</label> 
+	      <input type="text" ng-model="yourCompany" placeholder="Enter a company here">
+	    </div>
+	
+	    <div style="background-color: white; border-radius: 10px; padding: 25px">
+	    	<p style="text-align: justify">
+	    		¡Hola {{yourName}}! Gracias por tu interés en nuestra plataforma, creemos que juntos podemos mejorar tu experiencia colaborativa dentro de la empresa {{yourCompany}}, para que todos sean más productivos y recuperen la pasión por su trabajo diario. Olvídate de los miles de correos, el tiempo perdido buscando archivos y la tortura de intentar trabajar en equipo. Es hora de que tengas una plataforma en línea privada y segura donde puedas colaborar y comunicarte de una manera más eficiente.
+	    	</p>
+	    	<p>
+	    		¿Pero qué es Lunnasoft y qué puede hacer por tu empresa {{yourCompany}}? Bueno {{yourName}}, ¡nada lo explica mejor que un breve video!
+	    	</p>
+	    	<div class="row">
+	    	 	<div class="small-12 large-8 columns">
+	    	 		<div class="flex-video" style="margin-bottom: 25px">
+	    	 			<iframe width="640" height="360" src="//www.youtube.com/embed/kSjH3dhqBMY?rel=0" frameborder="0" allowfullscreen></iframe>
+	    	 		</div>
+	    	 	</div>	
+	    		<div class="small-12 large-4 columns">
+	    			<p style="text-align: justify;">
+			    		Si estás interesado, también puedes ver nuestro video enfocado a inversionistas y aliados estratégicos explicando nuestro modelo de negocios:
+			    	</p>
+			    	<a href="#" data-reveal-id="videoModal" class="radius button" style="text-align: center">RocketPitch</a>
+			 
+			    	
+			    	<div id="videoModal" class="reveal-modal large" data-reveal>
+					  <h2>RocketPitch Lunnasoft</h2>
+					  <div class="flex-video">
+					    <iframe width="640" height="360" src="//www.youtube.com/embed/gREWsvMQ31o?rel=0" frameborder="0" allowfullscreen></iframe>
+					  </div>
+					
+					  <a class="close-reveal-modal">&#215;</a>
+					</div>		
+				</div>    	
+	    	</div>
+	    	<div>
+	    		<h3>Tu espacio de trabajo</h3>
+	    		<img src="http://www.lunnasoft.com/files/8613/9937/1719/Tu_espacio_de_trabajo2.jpg">
+	    	</div>
+		    <div style="margin-top: 25px">
+		    <dl class="accordion" data-accordion>
+				<dd>
+				    <a href="#panel1" style="background-color: #242930; color: white">Nos enfocamos en personas como tú {{yourName}}</a>
+				    <div id="panel1" class="content active">	
+				    	<dl class="tabs" data-tab>
+						  <dd class="active"><a href="#panel1-1">Emprendedores</a></dd>
+						  <dd><a href="#panel1-2">Profesionistas</a></dd>
+						</dl>
+						<div class="tabs-content">
+						  <div class="content active" id="panel1-1" style="text-align: center">		   
+						    <img src="https://github.com/franciscoramoss/Images/blob/master/info%202.001.jpg?raw=true">	
+						  </div>
+						  <div class="content" id="panel1-2" style="text-align: center">
+							 <img src="https://github.com/franciscoramoss/Images/blob/master/info%201.001.jpg?raw=true">			   
+						  </div>
+						</div>
+					</div>
+				</dd>
+				<dd>
+					<a href="#panel2" style="background-color: #242930; color: white; border-top-style: solid; border-bottom-style: solid; border-color: white">¿Sabes qué dicen de nosotros?</a>
+			    <div id="panel2" class="content">
+			     	<dl class="tabs" data-tab>
+						  <dd class="active"><a href="#panel2-1">Evernote</a></dd>
+						  <dd><a href="#panel2-2">Edimec</a></dd>
+						  <dd><a href="#panel2-3">TEC de Monterrey</a></dd>
+					</dl>
+						<div class="tabs-content">
+						  <div class="content active" id="panel2-1">
+						  	<div style="float: left; margin-top: 20px; margin-right: 20px; margin-bottom: 10px; margin-left: 10px;">
+						  		<img src="http://www.lunnasoft.com/files/6513/9936/0008/hackdt_chris_traganos_evernote-600x450.jpg" height="200px" width="200px">
+						  	</div>		   
+						    <h3 style="margin-top: 20px">Chris Traganos</h3> 
+						    <p style="font-weight: bold">Director of Developer Relations at Evernote</p>
+			    			<p style="text-align: justify">Chris ha compartido con nosotros sus opiniones y consejos sobre Lunnasoft durante el PulsoConf 2013 y el EC3 en San Francisco. Después de navegar por la plataforma y escuchar sobre nuestro modelo de negocios, Chris nos comentó que le parecía una muy buena oportunidad, sobre todo por nuestro enfoque en el mercado de América Latina. Nos hizo hincapié en que el éxito no estaba en tener una gran cantidad de funcionalidades, sino en crear una plataforma muy sencilla de utilizar que resultara sexy para el usuario, por lo cual debíamos enfocarnos en las funcionalidades principales de Lunna y elegir cuáles otras íbamos a sacrificar.</p>
+			    			<p style="text-align: justify">Nos sugirió emplear un diseño flat y responsivo tanto para la plataforma como para la landing page, aprovechando frameworks como el de Foundation o Bootstrap. Según Chris, debemos prestar gran atención al diseño de la plataforma, ya que esto además de atraer a usuarios mediante una buena primera impresión, afecta en gran medida la experiencia que puede llegar a tener el usuario dentro de nuestra plataforma. Así mismo, nos sugirió mejorar la forma en que transmitíamos nuestro mensaje, enfocándonos más en la experiencia del usuario, casos de uso, y esa principal funcionalidad que hacemos mejor que nadie y nos puede diferenciar de la competencia. </p>
+						  </div>
+						  <div class="content" id="panel2-2">
+							 	<h3>EDIMEC</h3>
+				    			<p style="text-align: justify">La constructora tapatía EDIMEC nos otorgó su confianza y aceptó convertirse en una de las primeras empresas en utilizar nuestra plataforma Lunnasoft dentro del ámbito empresarial. Después de mucho batallar con complicados softwares para negocios, vieron una gran oportunidad en la sencilla interfaz de Lunnasoft y sus capacidades para mejorar la comunicación entre el equipo administrativo. Conscientes de que aún continuamos en desarrollo y la plataforma aún no tiene tantas funcionalidades, consideraron que la versión actual ya era suficiente para agregarles valor en sus procesos.</p>
+				    			<p style="text-align: justify">La empresa ha estado colaborando con nosotros proporcionándonos retroalimentación continua y distintas sugerencias para mejorar la plataforma. Dentro de las principales funciones que nos han solicitado para incluir en la plataforma, está la implementación de un calendario donde se muestren las distintas tareas asignadas por fecha, una interfaz más sencilla para actualizar la imagen de perfil, distintas vistas para visualizar las tareas y proyectos de un usuario, así como la posibilidad de darle su propio branding a la plataforma.</p>
+				    			<p style="text-align: justify">Además de esto, nos hicieron hincapié en la importancia de estar recibiendo notificaciones oportunas, lo cual ha hecho que convirtamos el desarrollo de una app móvil en una de nuestras prioridades para aprovechar el sistema de push notifications.</p>		   
+						  </div>
+						  <div class="content" id="panel2-3">
+						  	<div style="float: left; margin-top: 20px; margin-right: 20px; margin-bottom: 10px; margin-left: 10px;">
+						  		<img src="http://www.lunnasoft.com/files/2013/9936/3565/IsaacL.jpg" height="200px" width="200px">
+						  	</div>		   
+						    <h3 style="margin-top: 20px">Isaac Lucatero</h3> 
+						    <p style="font-weight: bold">Director General ITESM Campus León</p>
+						    <p style="text-align: justify">
+						    	Durante su estancia como Director de la División de Emprendimiento e Innovación del TEC de Monterrey Campus Guadalajara, el Dr. Isaac Lucatero fue uno de nuestros mentores, apoyándonos desde un principio y creyendo en el gran potencial de la empresa. 
+						    </p>
+						    <p style="text-align: justify">
+						    	Además de orientarnos muy de cerca en todo lo referente a nuestra formación emprendedora, Isaac nos proporcionó constantemente insights muy valiosos sobre las verdaderas necesidades de colaboración y comunicación dentro de una institución como el Tecnológico de Monterrey, lo cual nos ayudó a enfocar claramente nuestro modelo y las funcionalidades principales de la plataforma. Así fue como desde el primer prototipo que se le mostró, quedó convencido que algún día Lunnasoft iba a formar parte fundamental de la infraestructura tecnológica de la institución.
+						    </p>
+						    <blockquote>
+						    	“Yammer, Office 365, desarrollos in-house... Hemos utilizado varias plataformas dentro de la institución, pero la única que realmente me ha convencido por su enfoque y sencillez es Lunnasoft”
+						   			<cite>Dr. Isaac Lucatero</cite>
+						    </blockquote>
+						  </div>
+						</div>
+			    </div>
+				</dd>
+				<dd>
+				    <a href="#panel3" style="background-color: #242930; color: white">Un poco de Benchmarking</a>
+				    <div id="panel3" class="content">	
+				    	<dl class="tabs" data-tab>
+						  <dd class="active"><a href="#panel3-1">Industria</a></dd>
+						  <dd><a href="#panel3-2">Jive Software</a></dd>
+						  <dd><a href="#panel3-3">Microsoft</a></dd>
+						</dl>
+						<div class="tabs-content">
+						  <div class="content active" id="panel3-1">	
+						  	<div class="row">
+						  		<div class="small-12 large-6 columns">
+						  			<h3 style="margin-top: 25px; margin-bottom: 25px;">
+						  				Software Social en el Área de Trabajo
+						  			</h3>
+						  			<p style="text-align: justify">
+						  				Según el reporte ”Magic Quadrant for Social Software in the Workplace” elaborado por Gartner en el 2013, nuestros principales competidores pueden representarse en la siguiente gráfica, dividiéndose en Retadores, Lídres, Visionarios y Jugadores de nicho.
+						  			</p>
+						  			<p style="text-align: justify">
+						  				De todas ellas, consideramos que las soluciones más representativas de la industria son las ofrecidas por las compañías de Jive Software y Microsoft.
+						  			</p>
+						  		</div>
+						  		<div class="small-12 large-6 columns">
+						  			<img src="http://www.lunnasoft.com/files/5313/9615/2945/MagicQuadrant_2013.png">
+						  		</div>
+						  	</div>	   
+						   
+						  </div>
+						  <div class="content" id="panel3-2">
+							 	<h3>Jive Software</h3>
+					    		<p style="text-align: justify">Jive continúa ganando a grandes corporativos como clientes principales gracias las amplias capacidades y funciones de su plataforma así su gran visibilidad en el mercado.</p>
+					    		<div class="row">
+					    			<div class="small-12 large-6 columns">
+							    		<p style="font-weight: bold">Fortalezas</p>
+							    		<ul style="text-align: justify">
+							    			<li>Enfoque: Habiendo liderado al mercado con una plataforma social que logró atraer a los early adopters, ahora se está enfocando en las demás compañías (mainstream) con tentadoras promesas como la acelerada aceptación y adopción por parte de los usuarios, analíticos sociales y soporte para las interacciones realizadas entre empleados, clientes, socios y proveedores mientras realizan su trabajo diario ya sea desde Jive o cualquier otra aplicación que estén utilizando.</li>
+							    			<li>Ecosistema: Cuenta con un bien establecido programa de alianzas estratégicas que incluye consultoras de gran renombre como PwC y Accenture, agencias digitales, socios tecnológicos como Box y Bunchball, así como un marketplace propio a través del cual terceras partes pueden desarrollar y ofrecer diversas aplicaciones e integraciones.</li>
+							    		</ul>
+							    	</div>
+							    	<div class="small-12 large-6 columns">
+							    		<p style="font-weight: bold">Debilidades</p>
+							    		<ul style="text-align: justify">
+							    			<li>Estrategia de producto: Jive debe la mayor parte de su éxito a haber sido de los primeros en el mercado, sin embargo la aparición de vendedores cada vez más capaces y la falta de exigencia por parte de las organizaciones más mainstream representan un verdadero reto que lo obligará a realizar importantes cambios en su producto.</li>
+							    			<li>Plataforma: Carece de un amplio rango de funcionalidades adyacentes, como comunicaciones en tiempo real, administracións de documentos y business intelligence, así como la habilidad para ser incluida junto con otras aplicaciones para negocios</li>
+							    			<li>Viabilidad: Mientras que su IPO la ayudó a asegurar el crecimiento de su plataforma y presencia geográfica, sigue siendo una empresa relativamente pequeña que debe manejar su evolución cuidadosamente.</li>
+							    		</ul>
+							    	</div>
+					    		</div>			   
+						  </div>
+						  <div class="content" id="panel3-3">
+								<h3>Microsoft</h3>
+					    		<p style="text-align: justify">Mientras que la adquisición de Yammer se empalma con varias funciones de colaboración dentro de SharePoint, éste último continúa ofreciendo más funcionalidades mientras ambos productos continúan encaminándose a convertirse en parte de una misma solución.</p>
+					    		<div class="row">
+					    			<div class="small-12 large-6 columns">
+							    		<p style="font-weight: bold">Fortalezas</p>
+							    		<ul style="text-align: justify">
+							    			<li>Integraciones: Los consumidores suelen adquirir SharePoint por su amplia gama de funcionalidades como plataforma y a Yammer por su enfoque en usabilidad y casos de uso más específicos. La integración previa de ambos productos está mejorando considerablemente y Yammer se está convirtiendo en un “social layer” sobre los demás productos ofrecidos por Microsoft</li>
+							    			<li>Funcionalidad: La integración entre SharePoint y Yammer ofrece una gran cantidad de funciones y capacidades para las empresas</li>
+							    			<li>Viabilidad: SharePoint es actualmente una de las plataformas más utilizadas para la colaboración y manejo de documentos, mientras que Yammer es la plataforma de más rápido crecimiento gracias a su modelo freemium</li>
+							    		</ul>
+					    			</div>
+					    			<div class="small-12 large-6 columns">
+							    		<p style="font-weight: bold">Debilidades</p>
+							    		<ul style="text-align: justify">
+							    			<li>Plataforma: Microsoft necesita distinguir claramente los roles diferentes de SharePoint y Yammer para eliminar los empalmes en funciones que sólo generan mayor complejidad, mientras evita eliminar funciones que vuelvan a ambas soluciones poco atractivas al ser vendidas por separado.</li>
+							    			<li>Experiencia del usuario: la diferencia entre las implementaciones bajo demanda y en la nube entre SharePoint y Yammer hará que muchos de los actuales clientes de SharePoint pasen por dolorosas actualizaciones y transiciones hasta que se logre una integración adecuada entre ambos.</li>
+							    		</ul>	
+							    	</div>
+					    		</div>				  	
+						  </div>
+						</div>
+					</div>
+				</dd>
+			</dl>
+			</div>
+			<div style="margin-top: 25px">
+				<h3 style="margin-bottom: 20px">Da un vistazo a nuestro desarrollo</h3>
+				<ul class="example-orbit" data-orbit>
+					<li>
+						<img src="http://www.lunnasoft.com/files/6813/9937/1669/Discusiones.png">
+						<div class="orbit-caption">
+							Mockup para la nueva sección de Discusiones
+						</div>
+					</li>
+					<li>
+						<img src="http://www.lunnasoft.com/files/1413/9937/1680/Discusiones2.png">
+						<div class="orbit-caption">
+							Mockup para la nueva sección de Discusiones
+						</div>
+					</li>
+					<li>
+						<img src="http://www.lunnasoft.com/files/5113/9937/1656/Perfil_2.png">
+						<div class="orbit-caption">
+							Nuevo diseño para tu Perfil
+						</div>
+					</li>
+					<li>
+						<img src="http://www.lunnasoft.com/files/6613/9937/2400/VistaProyectos1.png">
+						<div class="orbit-caption">
+							Una propuesta para ver todos tus proyectos
+						</div>
+					</li>
+					<li>
+						<img src="http://www.lunnasoft.com/files/4713/9937/1764/IMG_1464.PNG">
+						<div class="orbit-caption">
+							Mockup para nuestra app móvil
+						</div>
+					</li>	
+				</ul>
+			</div>	
+	    </div>
+	        
+	</div>   
     
-    <div class="container-fluid" style="margin-top: 25px">
-    	<img class="img-responsive" style="margin-right: auto; margin-left: auto" src="https://github.com/franciscoramoss/Images/blob/master/info%201.001.jpg?raw=true">
-    </div>
+    <footer>
+    	<p class="text-center" style="color: #CCCCCC; font-size: 10px; margin-top: 25px">Copyright © 2014 Lunnasoft. Plataforma Social de Negocios. All rights reserved.</p>
+    </footer>
     
-    <div class="container-fluid" style="margin-top: 25px">
-    	<img class="img-responsive" style="margin-right: auto; margin-left: auto" src="https://github.com/franciscoramoss/Images/blob/master/info%202.001.jpg?raw=true">
-    </div>
-    
-    <div class="container-fluid">
-    	<div class="row" style="margin-top: 25px; margin-left: 5%; margin-right: 5%;">
-    		<h3 style="color: white">Lo que dicen de Lunnasoft</h3>
-    		<div class="col-md-6">
-    			<img class="img-circle" src="https://lh3.ggpht.com/si0cgkp2rkVX5JhhBYrtZ4cy2I1hZcrx8aiz-v8MjvPykfhT7-YAM2B8MNi0OCF9AQ=w300" width="75px" style="float: left; margin: 15px"> 
-    			<h4 style="color: white">Chris Traganos: Director of Developer Relations at Evernote</h4>
-    			<p style="color: white; text-align: justify">Chris ha compartido con nosotros sus opiniones y consejos sobre Lunnasoft durante el PulsoConf 2013 y el EC3 en San Francisco. Después de navegar por la plataforma y escuchar sobre nuestro modelo de negocios, Chris nos comentó que le parecía una muy buena oportunidad, sobre todo por nuestro enfoque en el mercado de América Latina. Nos hizo hincapié en que el éxito no estaba en tener una gran cantidad de funcionalidades, sino en crear una plataforma muy sencilla de utilizar que resultara sexy para el usuario, por lo cual debíamos enfocarnos en las funcionalidades principales de Lunna y elegir cuáles otras íbamos a sacrificar.</p>
-    			<p style="color: white; text-align: justify">Nos sugirió emplear un diseño flat y responsivo tanto para la plataforma como para la landing page, aprovechando frameworks como el de Foundation o Bootstrap. Según Chris, debemos prestar gran atención al diseño de la plataforma, ya que esto además de atraer a usuarios mediante una buena primera impresión, afecta en gran medida la experiencia que puede llegar a tener el usuario dentro de nuestra plataforma. Así mismo, nos sugirió mejorar la forma en que transmitíamos nuestro mensaje, enfocándonos más en la experiencia del usuario, casos de uso, y esa principal funcionalidad que hacemos mejor que nadie y nos puede diferenciar de la competencia. </p>
-    		</div>
-    		<div class="col-md-6">
-    			<h4 style="color: white">EDIMEC</h4>
-    			<p style="color: white; text-align: justify">La constructora tapatía EDIMEC nos otorgó su confianza y aceptó convertirse en una de las primeras empresas en utilizar nuestra plataforma Lunnasoft dentro del ámbito empresarial. Después de mucho batallar con complicados softwares para negocios, vieron una gran oportunidad en la sencilla interfaz de Lunnasoft y sus capacidades para mejorar la comunicación entre el equipo administrativo. Conscientes de que aún continuamos en desarrollo y la plataforma aún no tiene tantas funcionalidades, consideraron que la versión actual ya era suficiente para agregarles valor en sus procesos.</p>
-    			<p style="color: white; text-align: justify">La empresa ha estado colaborando con nosotros proporcionándonos retroalimentación continua y distintas sugerencias para mejorar la plataforma. Dentro de las principales funciones que nos han solicitado para incluir en la plataforma, está la implementación de un calendario donde se muestren las distintas tareas asignadas por fecha, una interfaz más sencilla para actualizar la imagen de perfil, distintas vistas para visualizar las tareas y proyectos de un usuario, así como la posibilidad de darle su propio branding a la plataforma.</p>
-    			<p style="color: white; text-align: justify">Además de esto, nos hicieron hincapié en la importancia de estar recibiendo notificaciones oportunas, lo cual ha hecho que convirtamos el desarrollo de una app móvil en una de nuestras prioridades para aprovechar el sistema de push notifications.</p>
-    		</div>
-    	</div>
-    </div>
-    
-    <div class="container-fluid" style="margin-left: 5%; margin-right: 5%;">
-    	<h3 style="color: white">Benchmarking</h3>
-    	<p style="color: white; text-align: justify">Según el reporte ”Magic Quadrant for Social Software in the Workplace” elaborado por Gartner en el 2013, nuestros principals competidores están representados de la siguiente manera:</p>
-    </div>
-    <div class="row" style="margin-left: 5%; margin-right: 5%">
-    	<div class="col-md-4">
-    		<div class="container-fluid text-center" style="margin-top: 25px; margin-right: auto; margin-left: auto">
-    			<img class="img-responsive" src="http://www.lunnasoft.com/files/5313/9615/2945/MagicQuadrant_2013.png" style="margin-right: auto; margin-left: auto;">
-    		</div>
-    	</div>
-    	<div class="col-md-4">
-    		<h4 style="color: white">Jive Software</h4>
-    		<p style="color: white; text-align: justify">Jive continúa ganando a grandes corporativos como clientes principales gracias las amplias capacidades y funciones de su plataforma así su gran visibilidad en el mercado.</p>
-    		<p style="color: white; font-weight: bold">Fortalezas</p>
-    		<ul style="color: white">
-    			<li>Enfoque: Habiendo liderado al mercado con una plataforma social que logró atraer a los early adopters, ahora se está enfocando en las demás compañías (mainstream) con tentadoras promesas como la acelerada aceptación y adopción por parte de los usuarios, analíticos sociales y soporte para las interacciones realizadas entre empleados, clientes, socios y proveedores mientras realizan su trabajo diario ya sea desde Jive o cualquier otra aplicación que estén utilizando.</li>
-    			<li>Ecosistema: Cuenta con un bien establecido programa de alianzas estratégicas que incluye consultoras de gran renombre como PwC y Accenture, agencias digitales, socios tecnológicos como Box y Bunchball, así como un marketplace propio a través del cual terceras partes pueden desarrollar y ofrecer diversas aplicaciones e integraciones.</li>
-    		</ul>
-    		<p style="color: white; font-weight: bold">Debilidades</p>
-    		<ul style="color: white">
-    			<li>Estrategia de producto: Jive debe la mayor parte de su éxito a haber sido de los primeros en el mercado, sin embargo la aparición de vendedores cada vez más capaces y la falta de exigencia por parte de las organizaciones más mainstream representan un verdadero reto que lo obligará a realizar importantes cambios en su producto.</li>
-    			<li>Plataforma: Carece de un amplio rango de funcionalidades adyacentes, como comunicaciones en tiempo real, administracións de documentos y business intelligence, así como la habilidad para ser incluida junto con otras aplicaciones para negocios</li>
-    			<li>Viabilidad: Mientras que su IPO la ayudó a asegurar el crecimiento de su plataforma y presencia geográfica, sigue siendo una empresa relativamente pequeña que debe manejar su evolución cuidadosamente.</li>
-    		</ul>
-    	</div>
-    	<div class="col-md-4">
-    		<h4 style="color: white">Microsoft</h4>
-    		<p style="color: white; text-align: justify">Mientras que la adquisición de Yammer se empalma con varias funciones de colaboración dentro de SharePoint, éste último continúa ofreciendo más funcionalidades mientras ambos productos continúan encaminándose a convertirse en parte de una misma solución.</p>
-    		<p style="color: white; font-weight: bold">Fortalezas</p>
-    		<ul style="color: white">
-    			<li>Integraciones: Los consumidores suelen adquirir SharePoint por su amplia gama de funcionalidades como plataforma y a Yammer por su enfoque en usabilidad y casos de uso más específicos. La integración previa de ambos productos está mejorando considerablemente y Yammer se está convirtiendo en un “social layer” sobre los demás productos ofrecidos por Microsoft</li>
-    			<li>Funcionalidad: La integración entre SharePoint y Yammer ofrece una gran cantidad de funciones y capacidades para las empresas</li>
-    			<li>Viabilidad: SharePoint es actualmente una de las plataformas más utilizadas para la colaboración y manejo de documentos, mientras que Yammer es la plataforma de más rápido crecimiento gracias a su modelo freemium</li>
-    		</ul>
-    		<p style="color: white; font-weight: bold">Debilidades</p>
-    		<ul style="color: white">
-    			<li>Plataforma: Microsoft necesita distinguir claramente los roles diferentes de SharePoint y Yammer para eliminar los empalmes en funciones que sólo generan mayor complejidad, mientras evita eliminar funciones que vuelvan a ambas soluciones poco atractivas al ser vendidas por separado.</li>
-    			<li>Experiencia del usuario: la diferencia entre las implementaciones bajo demanda y en la nube entre SharePoint y Yammer hará que muchos de los actuales clientes de SharePoint pasen por dolorosas actualizaciones y transiciones hasta que se logre una integración adecuada entre ambos.</li>
-    		</ul>
-    	</div>
-    </div>
-    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="/js/vendor/fastclick.js"></script>
+  	<script src="js/foundation.min.js"></script>
+  
+  	
+	<script>
+    $(document).foundation();
+  	</script>
+	
+	
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
